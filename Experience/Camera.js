@@ -38,7 +38,7 @@ export default class Camera {
     //actualizar perspectiva al cambiar tamaño
         this.perspectiveCamera.aspect = this.sizes.aspect
         this.perspectiveCamera.updateProjectionMatrix();
-    //actualizar capara ortografica al cambiar tamaño
+    //actualizar camara al cambiar tamaño
         this.orthographicCamera.left = (-this.sizes.aspect * this.sizes.frustrum)/2
         this.orthographicCamera.right = (this.sizes.aspect * this.sizes.frustrum)/2
         this.orthographicCamera.top = this.sizes.frustrum/2

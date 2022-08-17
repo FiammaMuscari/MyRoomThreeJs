@@ -6,7 +6,7 @@ export default[
     },
     {
         name:'screen',
-        type:'glbModel',
+        type:'videoTexture',
         path:'/textures/template.mp4',
     },
 ]

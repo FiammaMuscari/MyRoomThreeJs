@@ -4,8 +4,10 @@ import Sizes from "./Utils/Sizes.js"
 import Camera from "./Camera.js";
 import Renderer from "./Renderer.js";
 import Time from "./Utils/Time.js";
+import Resources from "./Utils/Resources.js";
 
 import World from "./Word/Word.js";
+import assets from "./Utils/assets.js";
 
 export default class Experience{
     static instance ;
@@ -20,6 +22,7 @@ export default class Experience{
         this.sizes = new Sizes();
         this.camera = new Camera();
         this.renderer = new Renderer();
+        this.resources = new Resources(assets);
         this.word = new World();
 
         this.sizes.on('resize',()=>{

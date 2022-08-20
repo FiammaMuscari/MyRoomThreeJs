@@ -34,6 +34,12 @@ export default class Camera {
         100
     );
     this.scene.add(this.orthographicCamera);
+    const size = 10;
+    const divisions = 10;
+    const gridHelper = new THREE.GridHelper(size, divisions);
+    this.scene.add (gridHelper);
+    const axesHelper = new THREE.AxesHelper(10);
+this.scene.add(axesHelper);
   }
 
   setOrbitControls(){
@@ -49,10 +55,12 @@ export default class Camera {
         this.perspectiveCamera.aspect = this.sizes.aspect
         this.perspectiveCamera.updateProjectionMatrix();
     //actualizar camara al cambiar tamaño
-        this.orthographicCamera.left = (-this.sizes.aspect * this.sizes.frustrum)/2
-        this.orthographicCamera.right = (this.sizes.aspect * this.sizes.frustrum)/2
-        this.orthographicCamera.top = this.sizes.frustrum/2
-        this.orthographicCamera.bottom = -this.sizes.frustrum/2
+        this.orthographicCamera.left =
+            (-this.sizes.aspect * this.sizes.frustrum) / 2;
+        this.orthographicCamera.right =
+            (this.sizes.aspect * this.sizes.frustrum) / 2;
+        this.orthographicCamera.top = this.sizes.frustrum / 2;
+        this.orthographicCamera.bottom = -this.sizes.frustrum / 2;
         this.orthographicCamera.updateProjectionMatrix();
   }
 

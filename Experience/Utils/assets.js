@@ -7,6 +7,6 @@ export default[
     {
         name:'screen',
         type:'videoTexture',
-        path:'/textures/template.mp4',
+        path:'/textures/bloom.mp4',
     },
 ]

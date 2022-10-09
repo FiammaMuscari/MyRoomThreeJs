@@ -17,6 +17,9 @@ export default class Sizes extends EventEmitter{
             this.toggleCircle.classList.toggle('slide')
             this.theme = this.theme === 'light'?'dark':'light'
             // console.log(this.theme)
+
+            document.body.classList.toggle('dark-theme')
+            document.body.classList.toggle('light-theme')
             this.emit('switch', this.theme)
         
         })

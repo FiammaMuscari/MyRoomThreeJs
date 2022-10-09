@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import Experience from "../Experience.js";
 import GSAP from 'gsap';
+import { RectAreaLightHelper } from "three/examples/jsm/helpers/RectAreaLightHelper.js";
 export default class Room {
   constructor() {
     this.experience = new Experience();
@@ -46,6 +47,24 @@ export default class Room {
         });
       }
     });
+
+    const width = 0.5;
+    const height = 0.7;
+    const intensity = 2;
+    const rectLight = new THREE.RectAreaLight( 0xffffff, intensity,  width, height );
+    rectLight.position.set( 7.68244, 7, 1 );
+    rectLight.rotation.x= -Math.PI / 2;
+    rectLight.rotation.z= Math.PI / 4;
+    
+    const rectLightpc = new THREE.RectAreaLight( 0xffffff, intensity,  width, height );
+    rectLightpc.position.set( -4.95192 , 8, 1.04973 );
+    rectLightpc.rotation.x= -Math.PI / 2;
+    rectLightpc.rotation.z= Math.PI / 4;
+    this.actualRoom.add( rectLight, rectLightpc )
+    
+    // const rectLightHelper = new RectAreaLightHelper( rectLight );
+    // rectLight.add( rectLightHelper );
+
     this.scene.add(this.actualRoom);
     this.actualRoom.scale.set(0.11, 0.11, 0.11);
   }

@@ -179,7 +179,7 @@ svg{
 .toggle-bar{
   position: fixed;
   display: flex;
-  opacity: 0;
+  /* opacity: 0; */
   flex-direction: row;
   justify-content: center;
   align-items: center;

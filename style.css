@@ -39,8 +39,8 @@ svg{
   --color-text: var(--color-text-light);
   --color-background: var(--color-background-light);
   --color-pink: var(--color-pink-light);
-  --color-green: var(--color-green-light);
-  --color-blue: var(--color-blue-light);
+  --color-green: var(--color-pink-light);
+  --color-blue: var(--color-pink-light);
 }
 
 .dark-theme{

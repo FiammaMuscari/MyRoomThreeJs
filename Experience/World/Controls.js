@@ -305,7 +305,103 @@ export default class Controls {
                     });
                 });
 
-              },
+              // Mini Platform Animations
+              this.secondPartTimeline = new GSAP.timeline({
+                scrollTrigger: {
+                    trigger: ".third-move",
+                    start: "center center",
+                },
+            });
+
+            this.room.children.forEach((child) => {
+                if (child.name === "Mini_Floor") {
+                    this.first = GSAP.to(child.position, {
+                        x: -5.44055,
+                        z: 13.6135,
+                        duration: 0.3,
+                    });
+                }
+                if (child.name === "Mailbox") {
+                    this.second = GSAP.to(child.scale, {
+                        x: 1,
+                        y: 1,
+                        z: 1,
+                        duration: 0.3,
+                    });
+                }
+                if (child.name === "Lamp") {
+                    this.third = GSAP.to(child.scale, {
+                        x: 1,
+                        y: 1,
+                        z: 1,
+                        ease: "back.out(2)",
+                        duration: 0.3,
+                    });
+                }
+                if (child.name === "FloorFirst") {
+                    this.fourth = GSAP.to(child.scale, {
+                        x: 1,
+                        y: 1,
+                        z: 1,
+                        ease: "back.out(2)",
+                        duration: 0.3,
+                    });
+                }
+                if (child.name === "FloorSecond") {
+                    this.fifth = GSAP.to(child.scale, {
+                        x: 1,
+                        y: 1,
+                        z: 1,
+                        duration: 0.3,
+                    });
+                }
+                if (child.name === "FloorThird") {
+                    this.sixth = GSAP.to(child.scale, {
+                        x: 1,
+                        y: 1,
+                        z: 1,
+                        ease: "back.out(2)",
+                        duration: 0.3,
+                    });
+                }
+                if (child.name === "Dirt") {
+                    this.seventh = GSAP.to(child.scale, {
+                        x: 1,
+                        y: 1,
+                        z: 1,
+                        ease: "back.out(2)",
+                        duration: 0.3,
+                    });
+                }
+                if (child.name === "Flower1") {
+                    this.eighth = GSAP.to(child.scale, {
+                        x: 1,
+                        y: 1,
+                        z: 1,
+                        ease: "back.out(2)",
+                        duration: 0.3,
+                    });
+                }
+                if (child.name === "Flower2") {
+                    this.ninth = GSAP.to(child.scale, {
+                        x: 1,
+                        y: 1,
+                        z: 1,
+                        ease: "back.out(2)",
+                        duration: 0.3,
+                    });
+                }
+            });
+            this.secondPartTimeline.add(this.first);
+            this.secondPartTimeline.add(this.second);
+            this.secondPartTimeline.add(this.third);
+            this.secondPartTimeline.add(this.fourth, "-=0.2");
+            this.secondPartTimeline.add(this.fifth, "-=0.2");
+            this.secondPartTimeline.add(this.sixth, "-=0.2");
+            this.secondPartTimeline.add(this.seventh, "-=0.2");
+            this.secondPartTimeline.add(this.eighth);
+            this.secondPartTimeline.add(this.ninth, "-=0.1");
+        },
         });
     }
     resize() {}

@@ -18,6 +18,9 @@ export default class Controls {
                 this.rectLight = child;
             }
         });
+        this.circleFirst = this.experience.world.floor.circleFirst;
+        this.circleSecond = this.experience.world.floor.circleSecond;
+        this.circleThird = this.experience.world.floor.circleThird;
 
 
         GSAP.registerPlugin(ScrollTrigger);
@@ -305,6 +308,60 @@ export default class Controls {
                     });
                 });
 
+                // All animations
+                // First section -----------------------------------------
+                this.firstCircle = new GSAP.timeline({
+                    scrollTrigger: {
+                        trigger: ".first-move",
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: 0.6,
+                    },
+                }).to(this.circleFirst.scale, {
+                    x: 3,
+                    y: 3,
+                    z: 3,
+                });
+
+                // Second section -----------------------------------------
+                this.secondCircle = new GSAP.timeline({
+                    scrollTrigger: {
+                        trigger: ".second-move",
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: 0.6,
+                    },
+                })
+                    .to(
+                        this.circleSecond.scale,
+                        {
+                            x: 3,
+                            y: 3,
+                            z: 3,
+                        },
+                        "same"
+                    )
+                    .to(
+                        this.room.position,
+                        {
+                            y: 0.7,
+                        },
+                        "same"
+                    );
+
+                // Third section -----------------------------------------
+                this.thirdCircle = new GSAP.timeline({
+                    scrollTrigger: {
+                        trigger: ".third-move",
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: 0.6,
+                    },
+                }).to(this.circleThird.scale, {
+                    x: 3,
+                    y: 3,
+                    z: 3,
+                });
               // Mini Platform Animations
               this.secondPartTimeline = new GSAP.timeline({
                 scrollTrigger: {

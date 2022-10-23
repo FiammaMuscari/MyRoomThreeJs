@@ -17,6 +17,7 @@ export default class Room {
           ease: 0.1,
       };
     this.setModel();
+    this.setModel2();
     this.setAnimation();
     this.onMouseMove();
   }
@@ -79,6 +80,23 @@ export default class Room {
     const width = 0.5;
     const height = 0.7;
     const intensity = 1;
+    
+    const rectLightpc = new THREE.RectAreaLight( 0xffffff, intensity,  width, height );
+    rectLightpc.position.set( -4.95192 , 8, 1.04973 );
+    rectLightpc.rotation.x= -Math.PI / 2;
+    rectLightpc.rotation.y= -Math.PI / 7;
+    rectLightpc.rotation.z= Math.PI / 4;
+    
+    this.actualRoom.add( rectLightpc)
+    this.roomChildren["rectLightpc"] = rectLightpc;
+
+    this.scene.add(this.actualRoom);
+    this.actualRoom.scale.set(0.11, 0.11, 0.11);
+  }
+  setModel2(){
+    const width = 0.5;
+    const height = 0.7;
+    const intensity = 1;
     const rectLight = new THREE.RectAreaLight(
         0xffffff,
         intensity,
@@ -88,20 +106,8 @@ export default class Room {
     rectLight.position.set(7.68244, 7, 0.5);
     rectLight.rotation.x = -Math.PI / 2;
     rectLight.rotation.z = Math.PI / 4;
-    const rectLightpc = new THREE.RectAreaLight( 0xffffff, intensity,  width, height );
-    rectLightpc.position.set( -4.95192 , 8, 1.04973 );
-    rectLightpc.rotation.x= -Math.PI / 2;
-    rectLightpc.rotation.y= -Math.PI / 7;
-    rectLightpc.rotation.z= Math.PI / 4;
-    this.actualRoom.add( rectLight, rectLightpc )
-    
+    this.actualRoom.add( rectLight )
     this.roomChildren["rectLight"] = rectLight;
-    this.roomChildren["rectLightpc"] = rectLightpc;
-
-    // const rectLightHelper = new RectAreaLightHelper(rectLight);
-    // rectLight.add(rectLightHelper);
-    // console.log(this.room);
-
     this.scene.add(this.actualRoom);
     this.actualRoom.scale.set(0.11, 0.11, 0.11);
   }

@@ -10,7 +10,7 @@ export default class Room {
         this.time = this.experience.time;
         this.room = this.resources.items.room;
         this.actualRoom = this.room.scene;
-
+        this.roomChildren = {};
         this.lerp = {
           current: 0,
           target: 0,
@@ -47,32 +47,47 @@ export default class Room {
         });
       }
 
-      if (child.name === "Mini_Floor") {
-        child.position.x = -0.289521;
-        child.position.z = 8.83572;
-    }
-    if (
-           child.name === "Mailbox" ||
-           child.name === "Lamp" ||
-           child.name === "FloorFirst" ||
-           child.name === "FloorSecond" ||
-           child.name === "FloorThird" ||
-           child.name === "Dirt" ||
-           child.name === "Flower1" ||
-           child.name === "Flower2"
-       ) {
-           child.scale.set(0, 0, 0);
-       }
-    });
+
+            if (child.name === "Mini_Floor") {
+                child.position.x = -0.289521;
+                child.position.z = 8.83572;
+            }
+
+            // if (
+            //     child.name === "Mailbox" ||
+            //     child.name === "Lamp" ||
+            //     child.name === "FloorFirst" ||
+            //     child.name === "FloorSecond" ||
+            //     child.name === "FloorThird" ||
+            //     child.name === "Dirt" ||
+            //     child.name === "Flower1" ||
+            //     child.name === "Flower2"
+            // ) {
+            //     child.scale.set(0, 0, 0);
+            // }
+
+            child.scale.set(0, 0, 0);
+            if (child.name === "Cube") {
+                // child.scale.set(1, 1, 1);
+                child.position.set(0, -1, 0);
+                child.rotation.y = Math.PI / 4;
+            }
+
+            this.roomChildren[child.name.toLowerCase()] = child;
+        });
 
     const width = 0.5;
     const height = 0.7;
-    const intensity = 2;
-    const rectLight = new THREE.RectAreaLight( 0xffffff, intensity,  width, height );
-    rectLight.position.set( 7.68244, 7, 1 );
-    rectLight.rotation.x= -Math.PI / 2;
-    rectLight.rotation.z= Math.PI / 4;
-    
+    const intensity = 1;
+    const rectLight = new THREE.RectAreaLight(
+        0xffffff,
+        intensity,
+        width,
+        height
+    );
+    rectLight.position.set(7.68244, 7, 0.5);
+    rectLight.rotation.x = -Math.PI / 2;
+    rectLight.rotation.z = Math.PI / 4;
     const rectLightpc = new THREE.RectAreaLight( 0xffffff, intensity,  width, height );
     rectLightpc.position.set( -4.95192 , 8, 1.04973 );
     rectLightpc.rotation.x= -Math.PI / 2;
@@ -80,9 +95,12 @@ export default class Room {
     rectLightpc.rotation.z= Math.PI / 4;
     this.actualRoom.add( rectLight, rectLightpc )
     
-    
-    // const rectLightHelper = new RectAreaLightHelper( rectLight );
-    // rectLight.add( rectLightHelper );
+    this.roomChildren["rectLight"] = rectLight;
+    this.roomChildren["rectLightpc"] = rectLightpc;
+
+    // const rectLightHelper = new RectAreaLightHelper(rectLight);
+    // rectLight.add(rectLightHelper);
+    // console.log(this.room);
 
     this.scene.add(this.actualRoom);
     this.actualRoom.scale.set(0.11, 0.11, 0.11);

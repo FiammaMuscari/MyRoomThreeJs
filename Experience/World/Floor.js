@@ -24,8 +24,8 @@ setFloor() {
 setCircles() {
   const geometry = new THREE.CircleGeometry(5, 64);
   const material = new THREE.MeshStandardMaterial({ color: 0xe5a1aa });
-  const material2 = new THREE.MeshStandardMaterial({ color: 0x7AD0AC });
-  const material3 = new THREE.MeshStandardMaterial({ color: 0x8395CD });
+  const material2 = new THREE.MeshStandardMaterial({ color: 0xd1808a });
+  const material3 = new THREE.MeshStandardMaterial({ color: 0xbf6d77 });
 
   this.circleFirst = new THREE.Mesh(geometry, material);
   this.circleSecond = new THREE.Mesh(geometry, material2);

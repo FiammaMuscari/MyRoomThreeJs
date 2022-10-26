@@ -139,7 +139,7 @@ svg{
 /* Preloader Stuff */
 .animatedis{
   display: inline-block;
-  transform: translateY(100%);
+  transform: translateY(150%);
 }
 
 .intro-text{

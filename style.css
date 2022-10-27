@@ -37,6 +37,7 @@ svg{
 
 .light-theme{
   --color-text: var(--color-text-light);
+  --color-button: var(--color-background-light);
   --color-background: var(--color-background-light);
   --color-pink: var(--color-pink-light);
   --color-green: var(--color-pink-light);
@@ -45,6 +46,7 @@ svg{
 
 .dark-theme{
   --color-text: var(--color-text-dark);
+  --color-button: var(--color-text-light);
   --color-background: var(--color-background-dark);
   --color-pink: var(--color-text-dark);
   --color-green: var(--color-text-dark);
@@ -515,4 +517,5 @@ a{
   padding: 1rem;
   font-size: 18px;
   cursor: pointer;
+  color: var(--color-button)
 }

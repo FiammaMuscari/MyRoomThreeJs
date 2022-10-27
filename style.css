@@ -264,7 +264,7 @@ svg{
 .section{
   position: relative;
   width: 50%;
-  padding: 300px 5%;
+  padding: 200px 5%;
   margin: 0;
   background-color: var(--color-background);
   overflow: hidden;
@@ -505,3 +505,14 @@ gap: 0.3em;
   }
 }
 
+a{
+  text-decoration: none;
+}
+
+.big {
+  width: 100%;
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 18px;
+  cursor: pointer;
+}

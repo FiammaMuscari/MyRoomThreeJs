@@ -2,7 +2,7 @@ export default[
     {
         name:'room',
         type:'glbModel',
-        path:'/models/Fiamma.glb',
+        path:'/models/Fiamma2.glb',
     },
     {
         name:'screen',

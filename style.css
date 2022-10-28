@@ -37,20 +37,24 @@ svg{
 
 .light-theme{
   --color-text: var(--color-text-light);
-  --color-button: var(--color-background-light);
+  --color-button: var(--color-text-light);
   --color-background: var(--color-background-light);
   --color-pink: var(--color-pink-light);
   --color-green: var(--color-pink-light);
   --color-blue: var(--color-pink-light);
+  --color-seemoreprimary:#e5a1aa;
+  --color-seemoresecondary:#e5a1aa85;
 }
 
 .dark-theme{
   --color-text: var(--color-text-dark);
-  --color-button: var(--color-text-light);
+  --color-button: var(--color-text-dark);
   --color-background: var(--color-background-dark);
   --color-pink: var(--color-text-dark);
   --color-green: var(--color-text-dark);
   --color-blue: var(--color-text-dark);
+  --color-seemoreprimary:#bd86ff;
+  --color-seemoresecondary:#bd86ff91;
 }
 
 /* Experience --------------------------------------------- */
@@ -239,7 +243,6 @@ svg{
 }
 .section-flex-second{
   display: flex;
-  max-width: 11rem;
   margin: 1rem auto;
   gap: 2rem
 }
@@ -518,4 +521,67 @@ a{
   font-size: 18px;
   cursor: pointer;
   color: var(--color-button)
+}
+
+.linkButton {
+  text-decoration: none;
+  color: inherit;
+}
+
+.buttonCircle {
+  position: relative;
+  margin: auto;
+  padding: 19px 22px;
+  transition: all 0.2s ease;
+}
+.buttonCircle:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 28px;
+  background: var(--color-seemoresecondary);
+  width: 56px;
+  height: 56px;
+  transition: all 0.3s ease;
+}
+.buttonCircle .buttonSpan {
+  position: relative;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  color:var(--color-button);
+}
+.buttonCircle svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: var(--color-button);
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+.buttonCircle:hover:before {
+  width: 100%;
+  background: var(--color-seemoreprimary);
+}
+.buttonCircle:hover svg {
+  transform: translateX(0);
+}
+.buttonCircle:active {
+  transform: scale(0.96);
+}
+
+.section-detail-contact{
+  width: 1em;
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
 }

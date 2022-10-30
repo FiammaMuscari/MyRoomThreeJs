@@ -551,7 +551,7 @@ a{
   font-size: 16px;
   line-height: 18px;
   font-weight: 900;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.1em;;
   text-transform: uppercase;
   vertical-align: middle;
   color:var(--color-button);
@@ -585,3 +585,29 @@ a{
   display: flex;
   flex-direction: column;
 }
+
+
+.first-div{
+  width: 1em;
+  gap: 8rem;
+  display: flex;
+}
+
+
+.second-div{
+  width: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+
+}
+
+
+.imgprofile {
+  margin: auto;
+  width: 13em;
+  border-radius: 50%;
+} 
+
+
+
